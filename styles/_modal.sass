@@ -1,0 +1,128 @@
+.modal
+    position: fixed
+    top: 0
+    left: 0
+    height: 100%
+    width: 100%
+    z-index: 9999
+    background-color: #000
+    backdrop-filter: blur(4px)
+    padding: 0
+    box-sizing: border-box
+    display: block
+    &-content
+        width: 94%
+        min-height: 100px
+        max-height: 98%
+        display: block
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        background-color: #fff
+        max-width: 440px
+        overflow-y: scroll
+        color: #000
+        text-align: left
+        padding: 50px
+        border-radius: 4px
+        -ms-overflow-style: none
+        scrollbar-width: none
+        &::-webkit-scrollbar
+            display: none
+            width: 0
+            height: 0
+
+        @media screen and ( max-width: 700px )
+            padding: 30px 30px 40px
+
+    .full
+        width: 97%
+        max-width: 100%
+        @media screen and ( max-width: 700px )
+            padding: 30px 30px 40px
+
+    .btn
+        width: 100%
+        margin: 16px 0
+
+    .heading
+        text-align: center
+        font-size: 24px
+        line-height: normal
+        font-weight: 700
+        margin: 0 0 30px
+
+    .policy
+        text-align: center
+        font-size: 12px
+        font-style: normal
+        font-weight: 400
+        line-height: normal
+        margin: 0
+        a
+            text-decoration: underline
+
+    &-close
+        position: absolute
+        top: 18px
+        right: 22px
+        border-radius: 50%
+        font-size: 24px
+        background-color: rgba(#000, .9)
+        color: #fff
+        width: 24px
+        height: 24px
+        line-height: 26px
+        justify-content: center
+        @media screen and ( max-width: 500px )
+            top: 12px
+            right: 12px
+
+
+.modal-overlays
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background: rgba(0, 0, 0, 0.5)
+  display: flex
+  justify-content: center
+  align-items: center
+  z-index: 1000
+
+.modals
+  background: white
+  padding: 0px
+  border-radius: 40px
+  text-align: center
+  position: relative
+  width: 401px
+  height: 301px
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
+
+  &-contents
+    display: flex
+    flex-direction: column
+    align-items: center
+  &-icons
+    font-size: 48px
+    color: green
+    padding-top: 60px
+  &-messages
+    margin-top: 10px
+    font-size: 28px
+    font-weight: 600
+    padding-top: 0px
+    color: #000
+  &-closes
+    width: 19px
+    height: 19px
+    position: absolute
+    top: 30px
+    right: 35px
+    background: none
+    border: none
+    font-size: 24px
+    cursor: pointer

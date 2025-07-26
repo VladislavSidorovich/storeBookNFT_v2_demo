@@ -1,0 +1,25 @@
+.tab-container {
+    display: flex;
+    border: 2px solid #000; /* Укажите цвет рамки */
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  
+  .tab-button {
+    flex: 1;
+    padding: 10px 20px;
+    border: none;
+    background-color: #000; /* Цвет фона для невыбранных вкладок */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .tab-button.selected {
+    background-color: white; /* Цвет фона для выбранной вкладки */
+    color: black;
+  }
+  
+  .tab-button:not(.selected):hover {
+    background-color: #333; /* Цвет фона при наведении для невыбранных вкладок */
+  }

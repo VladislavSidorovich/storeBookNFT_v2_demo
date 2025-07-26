@@ -1,0 +1,488 @@
+@import 'normolize'
+@import 'elements'
+@import 'header'
+@import 'slick'
+
+html 
+    min-width: 360px
+
+.main
+    text-align: center
+    padding: 15vh 0
+    .container
+        max-width: 880px
+
+    &__text
+        font-size: 18px
+        max-width: 710px
+        margin: 0 auto
+        line-height: 130%
+
+    .btn
+        display: inline-block
+        min-width: 200px
+        margin-top: 30px
+        &:hover
+            color: black
+
+.instruction
+    .title
+        align-items: flex-start
+        margin-bottom: 90px
+
+    h2
+        margin: 0
+
+    p
+        padding-top: 10px
+        font-size: 18px
+        max-width: 660px
+        margin: 0
+        max-width: 55%
+
+    ol
+        gap: 20px
+        list-style-type: none
+        padding: 0
+        counter-reset: custom-counter
+        margin-top: 70px
+        li
+            font-weight: 500
+            font-size: 16px
+           
+            padding: 26px 20px 26px 70px
+            border-radius: 70px
+            border: 1px solid #000
+            position: relative
+            z-index: 1
+            background-color: #fff
+            &::before
+                content: counter(custom-counter)
+                counter-increment: custom-counter
+                display: inline-block
+                font-size: 40px
+                position: absolute
+                top: 50%
+                transform: translateY(-50%)
+                font-weight: 700
+                right: calc( 100% - 51px )
+                z-index: 100
+
+        a
+            display: block
+            text-decoration: underline
+            margin-top: 4px
+            opacity: .7
+            &:hover
+                text-decoration: none
+                opacity: 1
+
+@import 'slick'
+
+    
+
+.products
+  
+    background-color: #000
+    color: white
+
+ 
+    
+    @media screen and ( min-width: 1100px )
+        .slick
+            &-slide
+                opacity: 0
+                visibility: hidden
+
+            &-active
+                visibility: visible
+                opacity: 1
+
+.closedSection
+       
+
+.sc-cGEMsY
+    @media screen and ( max-width: 700px )
+         margin:0px !important
+              
+
+.nft
+    padding: 33px 45px 65px
+    border: 1px solid rgba(white, .5)
+    background-color: rgba(#101010, .5)
+    border-radius: 40px
+    width: 100%
+    position: relative
+    z-index: 1
+    &::after
+        content: ''
+        display: block
+        width: 156px
+        height: 85%
+        max-height: 500px
+        background-image: url('/matic.svg')
+        background-repeat: no-repeat
+        background-position: center center
+        background-size: contain
+        position: absolute
+        top: 20px
+        left: 20px
+        filter: blur(7px)
+        z-index: -111
+        pointer-events: none
+
+    &__caption
+        font-size: 16px
+        color: #8E8E8E
+    &__price
+        font-size: 35px
+        font-weight: 700
+
+    &__priceMATIC
+        font-size: 23px
+        font-weight: 700
+
+    &__heading
+        min-height: 105px
+        font-size: 17.4px
+        font-weight: 600
+        margin: 0 0 30px
+
+    &__time
+        color: rgba(white, .5)
+        padding: 3px 0 3px 34px
+        background-image: url('/ic-time.svg')
+        background-repeat: no-repeat
+        background-size: contain
+        background-position: center left
+        margin: 15px 0 30px
+
+
+.nftNotBlockchain::after
+    background-image: none !important
+
+
+.about
+    padding-bottom: 150px
+    h2
+        margin: 0 0 18px
+
+    .wrap
+        align-items: flex-start
+
+    img
+        display: block
+        border-radius: 30px
+
+    .col
+        max-width: 48%
+        &:first-child
+            p
+                padding: 0 15px
+
+    &__text
+        font-size: 18px
+        line-height: 140%
+        margin: 0
+
+    img
+        margin: 0 0 30px
+
+    @media screen and ( min-width: 1000px )
+        .mob_none
+            display: none
+
+@media screen and (min-width: 840px ) and (max-width: 1300px )
+    .closedSection
+        height: 75vw
+   
+
+@media screen and (min-width: 840px ) and ( max-width: 1000px )
+    .main
+        text-align: left
+        &__text
+          margin: 0
+          font-size: 14px
+
+        h1
+            font-size: 20px
+
+    .instruction
+        .title
+            display: block
+            margin-bottom: 20px
+
+        h2
+            margin-bottom: 10px
+
+        p
+            max-width: 100%
+            font-size: 14px
+            padding: 0
+
+        ol
+            display: flex
+            flex-direction: column
+            margin: 0
+            li
+                font-size: 14px
+                padding: 20px 20px 20px 70px
+                width: 100%
+
+    .products
+        .wrap
+            display: block
+
+    .closedSection
+        height: 155vw
+   
+
+    .nft
+        padding: 32px 45px 65px
+        border-radius: 35px
+
+        &__caption
+            font-size: 14px
+
+        &__heading
+            min-height: 90px
+            font-size: 18px
+
+        &__price
+            font-size: 32px
+
+        &__time
+            margin: 15px 0 30px
+
+    .about
+        padding: 20px 0 80px
+        .container
+            padding: 0
+            display: block
+
+        img
+            display: block
+            height: auto
+            border-radius: 0
+
+        &__heading
+            padding: 0 20px
+
+        &__text
+            font-size: 14px
+            padding: 0 20px
+
+        .mob_none
+            display: none
+
+        .col
+            width: 100%
+            max-width: 100%
+            margin-bottom: 20px
+            &:first-child
+                p
+                    padding: 0 20px
+
+@media screen and ( min-width: 701px ) and ( max-width: 840px )
+
+    .main
+        text-align: left
+        &__text
+          margin: 0
+          font-size: 14px
+
+        h1
+            font-size: 20px
+
+    .instruction
+        .title
+            display: block
+            margin-bottom: 20px
+
+        h2
+            margin-bottom: 10px
+
+        p
+            max-width: 100%
+            font-size: 14px
+            padding: 0
+
+        ol
+            display: flex
+            flex-direction: column
+            margin: 0
+            li
+                font-size: 14px
+                padding: 20px 20px 20px 70px
+                width: 100%
+
+    .products
+        height: 125vw
+        .wrap
+            display: block
+
+    .closedSection
+        height: 175vw
+   
+
+    .nft
+        padding: 32px 45px 65px
+        border-radius: 35px
+
+        &__caption
+            font-size: 14px
+
+        &__heading
+            min-height: 90px
+            font-size: 22px
+
+        &__price
+            font-size: 32px
+
+        &__time
+            margin: 15px 0 30px
+
+    .about
+        padding: 20px 0 80px
+        .container
+            padding: 0
+            display: block
+
+        img
+            display: block
+            height: auto
+            border-radius: 0
+
+        &__heading
+            padding: 0 20px
+
+        &__text
+            font-size: 14px
+            padding: 0 20px
+
+        .mob_none
+            display: none
+
+        .col
+            width: 100%
+            max-width: 100%
+            margin-bottom: 20px
+            &:first-child
+                p
+                    padding: 0 20px
+
+
+@media screen and ( max-width: 450px )
+    .nft
+        height: 175vw
+
+    .products 
+
+
+    .instruction
+        .title
+            display: block
+            margin-bottom: 20px
+
+        h2
+            margin-bottom: 10px
+
+        p
+            max-width: 100%
+            font-size: 14px
+            padding: 0
+
+        ol
+            display: flex
+            flex-direction: column
+            margin: 0
+            li
+                font-size: 14px
+                padding: 20px 20px 20px 70px
+                width: 100%
+     
+    
+
+@media screen and ( max-width: 380px )
+    .nft
+        height: 175vw   
+
+  
+
+ 
+
+    .instruction
+        .title
+            display: block
+            margin-bottom: 20px
+
+        h2
+            margin-bottom: 10px
+
+        p
+            max-width: 100%
+            font-size: 14px
+            padding: 0
+
+        ol
+            display: flex
+            flex-direction: column
+            margin: 0
+            li
+                font-size: 14px
+                padding: 20px 20px 20px 70px
+                width: 100%
+    
+
+@import 'modal'
+
+
+.modal-overlays
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background: rgba(0, 0, 0, 0.5)
+  display: flex
+  justify-content: center
+  align-items: center
+  z-index: 1000
+
+.modals
+  background: white
+  padding: 0px
+  border-radius: 40px
+  text-align: center
+  position: relative
+  width: 401px
+  height: 301px
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
+
+  &-contents
+    display: flex
+    flex-direction: column
+    align-items: center
+  &-icons
+    font-size: 48px
+    color: green
+    padding-top: 60px
+  &-messages
+    margin-top: 10px
+    font-size: 28px
+    font-weight: 600
+    padding-top: 0px
+    color: #000
+  &-closes
+    width: 19px
+    height: 19px
+    position: absolute
+    top: 30px
+    right: 35px
+    background: none
+    border: none
+    font-size: 24px
+    cursor: pointer
+
+.hidden-slide 
+  display: none !important

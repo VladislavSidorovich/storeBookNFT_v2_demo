@@ -1,0 +1,201 @@
+.instruction {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.instruction__text {
+  user-select: none;
+  display: flex;
+  align-items: center;
+  font-size: 1.05rem;
+  line-height: 1.3rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.instruction__details {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  background-color: #fffdf9;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  border-radius: 10px;
+  gap: 0.8rem;
+  padding: 1rem 3rem 1rem 3rem;
+  border: 1px dashed #000;
+}
+
+.instruction__details span {
+  font-size: 1.05rem;
+  line-height: 1.3rem;
+  font-weight: 600;
+}
+
+.instruction__details ol {
+  padding-left: 1rem;
+}
+
+.instruction__details ol > li {
+  font-size: 1rem;
+  line-height: 1.3rem;
+  font-weight: 500;
+  text-decoration: underline;
+  color: #000;
+}
+
+.instruction__details ol > li a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #000;
+}
+
+.instruction__details ol > li::marker {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.instruction__details__img {
+  width: 0.9rem;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .instruction__details {
+    padding: 0.7rem 2rem 0.7rem 2rem;
+    gap: 0.6rem;
+  }
+  .instruction__text {
+    font-size: 90%;
+    line-height: 1.2rem;
+  }
+
+  .instruction__details span {
+    font-size: 90%;
+    line-height: 1.2rem;
+  }
+
+  .instruction__details ol {
+    padding-left: 0.8rem;
+  }
+
+  .instruction__details ol > li {
+    font-size: 90%;
+    line-height: 1.2rem;
+  }
+
+  .instruction__details ol > li::marker {
+    font-size: 90%;
+  }
+
+  .instruction__details__img {
+    width: 0.8rem;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .instruction__details {
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    gap: 0.5rem;
+  }
+
+  .instruction__text {
+    font-size: 80%;
+    line-height: 1.1rem;
+  }
+  .instruction__details span {
+    font-size: 80%;
+    line-height: 1.1rem;
+  }
+
+  .instruction__details ol {
+    padding-left: 0.7rem;
+  }
+
+  .instruction__details ol > li {
+    font-size: 80%;
+    line-height: 1.1rem;
+  }
+
+  .instruction__details ol > li::marker {
+    font-size: 80%;
+  }
+
+  .instruction__details__img {
+    width: 0.7rem;
+    height: auto;
+  }
+}
+
+@media (max-width: 400px) {
+  .instruction__details {
+    padding: 0.3rem 1rem 0.3rem 1rem;
+    gap: 0.2rem;
+  }
+
+  .instruction__text {
+    font-size: 70%;
+    line-height: 1rem;
+  }
+
+  .instruction__details span {
+    font-size: 70%;
+    line-height: 1rem;
+  }
+
+  .instruction__details ol {
+    padding-left: 0.5rem;
+  }
+
+  .instruction__details ol > li {
+    font-size: 70%;
+    line-height: 1rem;
+  }
+
+  .instruction__details ol > li::marker {
+    font-size: 70%;
+  }
+
+  .instruction__details__img {
+    width: 0.6rem;
+    height: auto;
+  }
+}
+
+@media (max-width: 340px) {
+  .instruction__details {
+    padding: 0.2rem 0.5rem 0.2rem 0.5rem;
+    gap: 0.1rem;
+  }
+
+  .instruction__text {
+    font-size: 60%;
+    line-height: 0.9rem;
+  }
+
+  .instruction__details span {
+    font-size: 60%;
+    line-height: 0.9rem;
+  }
+
+  .instruction__details ol {
+    padding-left: 0.3rem;
+  }
+
+  .instruction__details ol > li {
+    font-size: 60%;
+    line-height: 0.9rem;
+  }
+
+  .instruction__details ol > li::marker {
+    font-size: 60%;
+  }
+
+  .instruction__details__img {
+    width: 0.5rem;
+    height: auto;
+  }
+}

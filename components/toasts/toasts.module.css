@@ -1,0 +1,9 @@
+.toast {
+  display: flex;
+  /* align-items: center; */
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;
+  width: 100%;
+  gap: 5px;
+}
