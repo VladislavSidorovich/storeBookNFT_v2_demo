@@ -19,7 +19,8 @@ import PreviewIframe from "../components/iframe/PreviewIframe";
 import styled from 'styled-components';
 import closeModalicon from "../static/svg/closeModal.svg"
 import like from "../static/svg/like.svg"
-
+import AboutNFT from "../components/boxes/aboutNFT";
+import About from "../components/boxes/about";
 //import styles from "../styles/Home.module.css";
 //import AboutNFT from "../components/boxes/aboutNFT";
 //import Instruction from "../components/boxes/instruction";
@@ -603,18 +604,7 @@ const Home: NextPage = () => {
         </AnimatePresence>
       </header>
 
-      <main className="main">
-        <div className="container">
-          <p className="main__text">Здесь Вы можете приобрести</p>
-          <h1>Авторские статьи группы Сергея Попова в цифровом формате NFT</h1>
-          <p className="main__text">
-            <b>NFT (от англ. Non-Fungible Token)</b> — это уникальный токен,
-            представляющий собой цифровой актив в блокчейне. Технология NFT
-            позволяет обеспечить идентичность авторских статей, гарантировать их
-            подлинность и Ваше право владения цифровой копией данной статьи.
-          </p>
-        </div>
-      </main>
+     <AboutNFT/>
 
       <section className="instruction" id="instruction">
         <div className="container">
