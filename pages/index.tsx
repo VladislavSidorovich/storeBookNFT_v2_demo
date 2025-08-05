@@ -362,6 +362,179 @@ const ButtonEmail = styled.button`
   }
 `;
 
+export const AboutSection = styled.section`
+  padding: 80px 0;
+  background-color: #f8f9fa;
+`;
+
+export const Container_ = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+`;
+
+export const AboutGrid = styled.div`
+  display: grid;
+  gap: 60px;
+`;
+
+export const AboutPerson = styled.div`
+  display: flex;
+  gap: 40px;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+  @media (max-width: 992px) {
+    flex-direction: column;
+  }
+`;
+
+export const AboutPhoto = styled.div`
+  position: relative;
+  flex: 0 0 40%;
+  min-height: 400px;
+  overflow: hidden;
+
+  img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: 992px) {
+    min-height: 300px;
+  }
+`;
+
+export const AboutInfo = styled.div`
+  flex: 1;
+  padding: 40px;
+  position: relative;
+
+  @media (max-width: 768px) {
+    padding: 25px;
+  }
+`;
+
+export const AboutName = styled.h2`
+  font-size: 2.2rem;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  position: relative;
+  padding-bottom: 15px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: #333;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1.8rem;
+  }
+`;
+
+export const AboutTitle = styled.p`
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 25px;
+  font-weight: 600;
+`;
+
+export const AboutDetails = styled.ul`
+  list-style-type: none;
+  margin-bottom: 30px;
+`;
+
+export const AboutDetailsItem = styled.li`
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+
+  &::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #333;
+    font-size: 1.4rem;
+    line-height: 1;
+  }
+`;
+
+export const AboutFootnote = styled.div`
+  background: #f1f1f1;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 20px;
+  border-left: 4px solid #333;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  position: relative;
+
+  sup {
+    font-weight: bold;
+    margin-right: 5px;
+  }
+`;
+
+export const AboutPersonSecond = styled.div`
+  display: flex;
+  gap: 40px;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  margin-top: 40px;
+
+  @media (max-width: 992px) {
+    flex-direction: column;
+  }
+`;
+
+export const FootnoteLink = styled.a`
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+`;
+
+export const FootnoteAnchor = styled.sup`
+  font-size: 0.8rem;
+  vertical-align: super;
+  margin-left: 4px;
+  cursor: pointer;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 50%;
+  background-color: #f1f1f1;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #ddd;
+  }
+`;
+
+export const ExternalLink = styled.a`
+  color: #333;
+  text-decoration: underline;
+  word-break: break-all;
+
+  &:hover {
+    text-decoration: none;
+  }
+`;
+
+
 //sheet 2
 
 
@@ -881,55 +1054,73 @@ const Home: NextPage = () => {
         </div>
       </section>
 
-      <section className="about" id="about">
-        <div className="container wrap">
-          <div className="col">
-            <div className="about-image-box">
-              <Image
-                src="/Author.jpg"
-                alt="Author"
-                style={{ objectFit: "cover" }}
-                sizes="100%"
-                fill
+    <AboutSection id="about">
+      <Container_>
+        <AboutGrid>
+          <AboutPerson>
+            <AboutPhoto>
+              <Image 
+                src="/sergey-popov.jpg" 
+                alt="Сергей Попов" 
+                width={400}
+                height={500}
+                style={{ objectFit: 'contain' }}
               />
-            </div>
-            <p className="about__text first">
-              Сам себя называет МетаПанком - «Мыслителем без границ» («мета/
-              метод- путь за пределы» и «панк» - не признающий границ и
-              культурной обусловленности).
-            </p>
-          </div>
-          <div className="col">
-            <p className="about__text pc_none">Об авторе</p>
-            <h2 className="about__heading pc_none">Сергей Попов</h2>
-            <p className="about__text">
-              Практикующий методолог, президент Международной Методологической
-              Ассоциации, отец четверых детей.
-              <br />
-              <br />
-              С 1980 года участвовал в работе Московского Методологического
-              кружка под руководством Г.П. Щедровицкого. В 1989 году основал
-              «Международную Методологическую Ассоциацию» (ММАСС), действующую и
-              поныне.
-              <br />
-              <br />
-              Более 30 лет разрабатывает и внедряет интеллектуальные и
-              мыслительные техники, занимается социальной инженерией, автор
-              тренингов на постановку мышления.
-              <br />
-              <br />
-              По словам Вячеслава Леонидовича Глазычева, с которым «Попова
-              связывал ряд инициатив и проектов, он «демонстрирует невероятную
-              смелость мышления»
-            </p>
-            <p className="about__text second">
-              Сам себя называет МетаПанком - «Мыслителем без границ» («мета/
-              метод- путь за пределы» и «панк» - не признающий границ и
-              культурной обусловленности).
-            </p>
-          </div>
-        </div>
-      </section>
+            </AboutPhoto>
+            <AboutInfo>
+              <AboutName>Сергей Попов</AboutName>
+              <AboutTitle>Президент ММАСС, практикующий методолог</AboutTitle>
+              
+              <AboutDetails>
+                <AboutDetailsItem>Создатель Экспериментальной методологии</AboutDetailsItem>
+                <AboutDetailsItem>Автор и методологический руководитель тренингов на постановку мышления</AboutDetailsItem>
+                <AboutDetailsItem>
+                  Создатель журнала «Кентавр»
+                  <FootnoteLink href="#footnote-12" title="Перейти к сноске">
+                    <FootnoteAnchor>12</FootnoteAnchor>
+                  </FootnoteLink>
+                </AboutDetailsItem>
+                <AboutDetailsItem>Автор и создатель таких дисциплин как: игротехника, финансовая инженерия, социальная инженерия и др.</AboutDetailsItem>
+                <AboutDetailsItem>Создатель Лаборатории Родительства</AboutDetailsItem>
+                <AboutDetailsItem>Отец четверых детей</AboutDetailsItem>
+              </AboutDetails>
+            </AboutInfo>
+          </AboutPerson>
+
+          <AboutPersonSecond>
+            <AboutPhoto>
+              <Image 
+                src="/polina-popova.jpg" 
+                alt="Полина Попова-Ладная" 
+                width={400}
+                height={500}
+                style={{ objectFit: 'contain' }}
+              />
+            </AboutPhoto>
+            <AboutInfo>
+              <AboutName>Полина Попова-Ладная</AboutName>
+              <AboutTitle>Вице-президент ММАСС, практикующий методолог</AboutTitle>
+              
+              <AboutDetails>
+                <AboutDetailsItem>Соавтор и руководитель тренингов на постановку мышления</AboutDetailsItem>
+                <AboutDetailsItem>Организатор и содержательный руководитель работы Лаборатории Родительства</AboutDetailsItem>
+                <AboutDetailsItem>Автор программы для школьников «Дискуссионный клуб»</AboutDetailsItem>
+                <AboutDetailsItem>Мать двоих детей</AboutDetailsItem>
+              </AboutDetails>
+            </AboutInfo>
+          </AboutPersonSecond>
+
+          <AboutFootnote id="footnote-12">
+            <sup>12</sup> «Кентавр» - методологический и игротехнический альманах, публиковавшийся с 1990 по 2007 год, первый главный редактор – С. Поливанова, второй главный редактор – Г. Копылов. Цифровую версию выпусков журнала можно найти на сайте{' '}
+            <ExternalLink href="https://www.kentavr.mathedu.ru" target="_blank" rel="noopener noreferrer">
+              https://www.kentavr.mathedu.ru
+            </ExternalLink>
+          </AboutFootnote>
+        </AboutGrid>
+      </Container_>
+    </AboutSection>
+
+
       <MotionConfig transition={{ duration: 0.4 }}>
         <AnimatePresence mode="sync">
           {!isHidden && <SendForm />}
