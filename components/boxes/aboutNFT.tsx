@@ -1,8 +1,75 @@
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import styled from "styled-components";
 
 const AboutNFT = () => {
   const [expandedSection, setExpandedSection] = useState<"mmass" | "practice" | null>(null);
+
+  // Карта соответствия якорей и секций
+  const anchorToSectionMap: Record<string, "mmass" | "practice"> = {
+    "mmass-foundation": "mmass",
+    "mmass-goal": "mmass",
+    "experimental-methodology": "mmass",
+    "tpm-impact": "mmass",
+    "mmass-research": "mmass",
+    "mmass-approach": "mmass",
+    "parenting-lab": "mmass",
+    "em-definition": "practice",
+    "tpm-description": "practice",
+    "em-topics": "practice",
+    "living-thinking": "practice",
+  };
+
+  // Обработчик клика по якорным ссылкам
+  const handleInternalLinkClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const id = href.replace("#", "");
+    const targetSection = anchorToSectionMap[id];
+
+    if (targetSection) {
+      setExpandedSection(prev => prev === targetSection ? prev : targetSection);
+      
+      // Небольшая задержка для гарантии рендеринга секции перед прокруткой
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 50);
+    } else {
+      // Для якорей вне секций
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, []);
+
+  // Эффект для обработки начального URL
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      const id = hash.replace("#", "");
+      const targetSection = anchorToSectionMap[id];
+      
+      if (targetSection) {
+        setExpandedSection(targetSection);
+        
+        // Прокрутка после рендеринга секции
+        setTimeout(() => {
+          const element = document.getElementById(id);
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+          }
+        }, 100);
+      } else {
+        // Для якорей вне секций
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    }
+  }, []);
 
   const toggleSection = (section: "mmass" | "practice") => {
     setExpandedSection(expandedSection === section ? null : section);
@@ -52,7 +119,7 @@ const AboutNFT = () => {
               самостановящееся мышление, с 2016 года были разработаны специальные мероприятия, позволяющие неофитам получать опыт 
               быстрого и техничного вхождения в мышление, по ходу которого оснащать себя необходимыми техниками и интеллектуальными 
               способностями: рефлексия, воображение, чувствительность к реальности, способность к совместности, способность к 
-              пониманию, способность к схематизации и «перемножению» схем<FootnoteLink href="#scheme-multiplication">3</FootnoteLink> и др. Эти мероприятия получили название Тренинги на 
+              пониманию, способность к схематизации и «перемножении» схем<FootnoteLink href="#scheme-multiplication">3</FootnoteLink> и др. Эти мероприятия получили название Тренинги на 
               постановку мышления (ТПМ)<FootnoteLink href="#tpm-announcements">4</FootnoteLink>.
             </Paragraph>
             <Paragraph id="tpm-impact">
@@ -176,7 +243,10 @@ const AboutNFT = () => {
         <Paragraph>
           В случае, если тираж уже полностью выкуплен, система инструментов Издательства позволяет 
           приобрести ранее опубликованные материалы у других пользователей (
-            <InternalLink href="#instruction-4">
+            <InternalLink 
+              href="#instruction-4" 
+              onClick={(e) => handleInternalLinkClick(e, "#instruction-4")}
+            >
               подробнее см. Инструкцию 4 «Как купить или продать NFT»
             </InternalLink>
           ).
@@ -203,6 +273,7 @@ const Title = styled.h2`
   color: #2c3e50;
   margin-bottom: 20px;
   line-height: 1.3;
+  scroll-margin-top: 180px; /* Отступ для якорных ссылок */
 
   @media (max-width: 768px) {
     font-size: 1.5rem;
@@ -214,6 +285,7 @@ const Paragraph = styled.p`
   line-height: 1.6;
   margin-bottom: 20px;
   color: #333;
+  scroll-margin-top: 180px; /* Отступ для якорных ссылок */
 `;
 
 const ExpandButton = styled.button<{ isActive: boolean }>`
@@ -279,6 +351,7 @@ const FootnotesContainer = styled.div`
 const FootnoteItem = styled.p`
   margin-bottom: 10px;
   line-height: 1.5;
+  scroll-margin-top: 180px; /* Отступ для якорных ссылок */
 `;
 
 const FootnoteLink = styled.a`
