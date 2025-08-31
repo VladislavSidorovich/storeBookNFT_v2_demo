@@ -385,7 +385,7 @@ export const AboutPerson = styled.div`
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  padding-bottom: 15px;
+
 
   @media (max-width: 992px) {
     flex-direction: column;
@@ -1064,7 +1064,7 @@ const Home: NextPage = () => {
                 src="/sergey-popov.jpg" 
                 alt="Сергей Попов" 
                 width={400}
-                height={500}
+                height={570}
                 style={{ objectFit: 'contain' }}
               />
             </AboutPhoto>

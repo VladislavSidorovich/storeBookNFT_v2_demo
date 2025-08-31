@@ -83,9 +83,15 @@ const AboutNFT = () => {
         </Title>
         
         <Paragraph>
-          предоставляет доступ к эксклюзивным подлинным материалам, которые были 
+          предоставляет доступ к эксклюзивным подлинным<FootnoteLink href="#footnote-1">1</FootnoteLink> материалам, которые были 
           созданы под эгидой ММАСС за десятилетия ее существования.
         </Paragraph>
+
+        <FootnotesContainer>
+          <FootnoteItem id="footnote-1">
+            <sup>1</sup> Сохранение подлинности материалов является ценностью для ММАСС. В современном цифровом мире в ходе своей практики ММАСС и причастные к ней заинтересованные люди неоднократно имели дело с искажением важных культурных артефактов и их частей (в частности, материалы кружка ММК), что ведет к губительным для мысли последствиям. Во избежание такого рода ситуаций ММАСС в своём Цифровом издательстве использует технологию блокчейна.
+          </FootnoteItem>
+        </FootnotesContainer>
         
         <ExpandButton 
           onClick={() => toggleSection('mmass')} 
@@ -155,9 +161,15 @@ const AboutNFT = () => {
         )}
 
         <Paragraph>
-          Материалы, публикуемые издательством – артефакты ММАСС, созданные в разное 
+          Материалы, публикуемые издательством – артефакты<FootnoteLink href="#footnote-2">2</FootnoteLink> ММАСС, созданные в разное 
           время ее деятельности и имеющие привязку к практике Экспериментальной методологии.
         </Paragraph>
+
+        <FootnotesContainer>
+          <FootnoteItem id="footnote-2">
+            <sup>2</sup> Артефакт – искусственно (arte) сделанный/созданный (factus) объект, имеющий идеальное содержание, заложенное создателем в ту или иную материальную оболочку. Идеальное содержание скрыто в артефакте, основная интрига встречи с артефактом – разгадать/выделить идеальное содержание, проникнув в замысел создателя.
+          </FootnoteItem>
+        </FootnotesContainer>
         
         <ExpandButton 
           onClick={() => toggleSection('practice')} 
@@ -314,7 +326,8 @@ const ArrowIcon = styled.span`
 const ExpandedContent = styled.div`
   margin-top: 15px;
   padding-left: 15px;
-  border-left: 3px solid #eee;
+  background-color: #f7f6f6;
+  border-left: 3px solid #a3a3a3ff;
 `;
 
 const List = styled.ul`
