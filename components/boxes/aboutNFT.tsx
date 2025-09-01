@@ -259,7 +259,7 @@ const AboutNFT = () => {
               href="#instruction-4" 
               onClick={(e) => handleInternalLinkClick(e, "#instruction-4")}
             >
-              подробнее см. Инструкцию 4 «Как купить или продать NFT»
+              подробнее см. Инструкцию 4 «Как приобрести или продать NFT»
             </InternalLink>
           ).
         </Paragraph>
@@ -276,6 +276,7 @@ const AboutNFTContainer = styled.div`
 
 const Content = styled.div`
   max-width: 1200px;
+  text-align: justify;
   margin: 0 auto;
   padding: 0 20px;
 `;
@@ -283,6 +284,7 @@ const Content = styled.div`
 const Title = styled.h2`
   font-size: 2rem;
   color: #2c3e50;
+  text-align: start;
   margin-bottom: 20px;
   line-height: 1.3;
   scroll-margin-top: 180px; /* Отступ для якорных ссылок */

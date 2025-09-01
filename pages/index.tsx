@@ -475,7 +475,6 @@ export const AboutFootnote = styled.div`
   padding: 20px;
   border-radius: 12px;
   margin-top: 20px;
-  border-left: 4px solid #333;
   font-size: 0.95rem;
   line-height: 1.6;
   position: relative;
@@ -801,13 +800,13 @@ const Home: NextPage = () => {
               </a>
             </li>
             <li>
-              Купить криптовалюту <br />
+              приобрести криптовалюту <br />
               на кошелек
               <a
                 href="https://drive.google.com/file/d/1O7Y480gsMMJWV1eAE04_78naSf5YvsMG/view?usp=sharing"
                 target="_blank"
               >
-                Как купить криптовалюту?
+                Как приобрести криптовалюту?
               </a>
             </li>
             <li>
@@ -817,16 +816,16 @@ const Home: NextPage = () => {
                 href="https://drive.google.com/file/d/138TzHvksewxeKLv1uroNgK5mcn6OWnsa/view"
                 target="_blank"
               >
-                Как купить NFT?
+                Как приобрести NFT?
               </a>
             </li>
             <li>
-              Купить или продать <br /> NFT на маркетплейсе
+              приобрести или продать <br /> NFT на маркетплейсе
               <a
                 href="https://drive.google.com/file/d/1joAKIYR4-8HtPDX8NF6wVd01TbpBkJss/view"
                 target="_blank"
               >
-                Как купить или продать NFT?
+                Как приобрести или продать NFT?
               </a>
             </li>
           </ol>
